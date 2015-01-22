@@ -358,11 +358,17 @@ function trace( msg ) {
 /*	Array Remove - By John Resig (MIT Licensed)
 	http://ejohn.org/blog/javascript-array-remove/
 ================================================== */
-Array.prototype.remove = function(from, to) {
-  var rest = this.slice((to || from) + 1 || this.length);
-  this.length = from < 0 ? this.length + from : from;
-  return this.push.apply(this, rest);
-}
+/*
+ * This clause is removed since it conflicts with Drupal Panels IPE.
+ * TODO: See if there's a way to fix this issue within Drupal
+ *   instead of this library.
+ */
+
+// Array.prototype.remove = function(from, to) {
+//   var rest = this.slice((to || from) + 1 || this.length);
+//   this.length = from < 0 ? this.length + from : from;
+//   return this.push.apply(this, rest);
+// }
 
 /* Extending Date to include Week
 ================================================== */
